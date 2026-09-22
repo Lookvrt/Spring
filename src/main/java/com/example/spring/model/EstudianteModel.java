@@ -1,4 +1,4 @@
-package model;
+package com.example.spring.model;
 
 public class EstudianteModel {
     private int id;

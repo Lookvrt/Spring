@@ -1,8 +1,8 @@
-package service;
+package com.example.spring.service;
 
-import model.EstudianteModel;
+import com.example.spring.model.EstudianteModel;
 import org.springframework.stereotype.Service;
-import repository.EstudianteRepository;
+import com.example.spring.repository.EstudianteRepository;
 import java.util.List;
 
 @Service
@@ -14,7 +14,7 @@ public class EstudianteService {
 
     public EstudianteModel guardarEstudiantes(EstudianteModel estudiantes){
         repository.guardarEstudiante(estudiantes);
-        return estudiantes; /* Como no agregamos estudiantes no es necesario el metodo*/
+        return estudiantes; /* Como todavia no agregamos estudiantes no es necesario el metodo*/
     }
 
     public List<EstudianteModel> listarEstudiantes(){

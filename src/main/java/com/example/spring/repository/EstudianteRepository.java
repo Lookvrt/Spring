@@ -1,6 +1,6 @@
-package repository;
+package com.example.spring.repository;
 
-import model.EstudianteModel;
+import com.example.spring.model.EstudianteModel;
 import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
