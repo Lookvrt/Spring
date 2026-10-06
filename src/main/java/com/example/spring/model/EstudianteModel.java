@@ -6,6 +6,7 @@ public class EstudianteModel {
     private String apellido;
     private int edad;
 
+    public EstudianteModel() {}
     public EstudianteModel(int id, String nombre, String apellido, int edad) {
         this.id = id;
         this.nombre = nombre;

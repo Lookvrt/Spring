@@ -14,7 +14,7 @@ public class EstudianteService {
 
     public EstudianteModel guardarEstudiantes(EstudianteModel estudiantes){
         repository.guardarEstudiante(estudiantes);
-        return estudiantes; /* Como todavia no agregamos estudiantes no es necesario el metodo*/
+        return estudiantes;
     }
 
     public List<EstudianteModel> listarEstudiantes(){
@@ -23,7 +23,7 @@ public class EstudianteService {
 
     public String validarEdad(int id){
         return repository.buscarPorId(id)
-             .map(estudiante -> estudiante.getEdad()<18 ? "Eres mayor de edad" : "Eres menor de edad")
+             .map(estudiante -> estudiante.getEdad() >= 18 ? "Eres mayor de edad" : "Eres menor de edad")
              .orElse("Id de estudiante no existe");
     }
 }
