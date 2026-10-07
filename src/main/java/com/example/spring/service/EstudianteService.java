@@ -21,10 +21,19 @@ public class EstudianteService {
         return repository.obtenerEstudiantes();
     }
 
-    public String validarEdad(int id){
-        return repository.buscarPorId(id)
-             .map(estudiante -> estudiante.getEdad() >= 18 ? "Eres mayor de edad" : "Eres menor de edad")
-             .orElse("Id de estudiante no existe");
+    public int autoID(){
+        List<EstudianteModel> estudiantes = listarEstudiantes();
+        if(estudiantes.isEmpty()){
+            return 1;
+        }
+
+        int id = 0;
+        for(EstudianteModel e : estudiantes){
+            if(e.getId() > id){
+                id = e.getId();
+            }
+        }
+        return id + 1;
     }
 }
 

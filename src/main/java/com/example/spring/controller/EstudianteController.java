@@ -18,13 +18,11 @@ public class EstudianteController {
 
     @GetMapping("/")
     public String inicio(Model model){
+        EstudianteModel estudiante = new EstudianteModel();
+        estudiante.setId(service.autoID());
         model.addAttribute("estudiantes", service.listarEstudiantes());
+        model.addAttribute("nuevoEstudiante", estudiante);
         return "listaEstudiantes";
-    }
-    @GetMapping("/nuevo")
-    public String mostrarFormulario(Model model){
-        model.addAttribute("nuevoEstudiante", new EstudianteModel());
-        return "estudianteForm";
     }
 
     @PostMapping("/guardar")
